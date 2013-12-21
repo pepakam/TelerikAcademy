@@ -1,0 +1,25 @@
+﻿body {
+    font-family: Arial;
+    padding: 5px 25px 10px 25px;
+}
+
+table {
+    border-collapse: collapse;
+    padding: 0px;
+}
+
+    table td, th {
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+#logo {
+    vertical-align: middle;
+}
+
+header h1 {
+    display: inline;
+    font-size: 1.2em;
+    font-weight: normal;
+    vertical-align: middle;
+}

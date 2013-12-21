@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Point3D", "Point3D\1.Point3D.csproj", "{94D1D056-D4F0-4628-BD58-C908DE689617}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.GenericList", "5.GenericList\5.GenericList.csproj", "{604702D8-4B35-45C2-9397-4923518975A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.Matrix", "8.Matrix\8.Matrix.csproj", "{9890536F-81A5-4C8A-881C-3B3FEBC88AF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94D1D056-D4F0-4628-BD58-C908DE689617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D1D056-D4F0-4628-BD58-C908DE689617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D1D056-D4F0-4628-BD58-C908DE689617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D1D056-D4F0-4628-BD58-C908DE689617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{604702D8-4B35-45C2-9397-4923518975A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{604702D8-4B35-45C2-9397-4923518975A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{604702D8-4B35-45C2-9397-4923518975A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{604702D8-4B35-45C2-9397-4923518975A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9890536F-81A5-4C8A-881C-3B3FEBC88AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9890536F-81A5-4C8A-881C-3B3FEBC88AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9890536F-81A5-4C8A-881C-3B3FEBC88AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9890536F-81A5-4C8A-881C-3B3FEBC88AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

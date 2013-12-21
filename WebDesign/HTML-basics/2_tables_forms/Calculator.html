@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Penka Kamenova" />
+    <title>Calculator</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+            width: 160px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        input, button {
+            width: 100%;
+        }
+
+        .result {
+            width: 94%;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="calc">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input name="result" type="text" class="result" value="123" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="one">1</button></td>
+                <td>
+                    <button id="two">2</button></td>
+                <td>
+                    <button id="three">3</button></td>
+                <td>
+                    <button id="add">+</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="four">4</button></td>
+                <td>
+                    <button id="five">5</button></td>
+                <td>
+                    <button id="six">6</button></td>
+                <td>
+                    <button id="subtract">-</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="seven">7</button></td>
+                <td>
+                    <button id="eight">8</button></td>
+                <td>
+                    <button id="nine">9</button></td>
+                <td>
+                    <button id="multiply">*</button></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button id="zero">0</button></td>
+                <td>
+                    <button id="decimal">.</button></td>
+                <td>
+                    <button id="divide">/</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

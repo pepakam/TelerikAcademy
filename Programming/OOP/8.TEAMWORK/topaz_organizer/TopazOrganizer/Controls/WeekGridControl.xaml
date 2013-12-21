@@ -1,0 +1,476 @@
+﻿<UserControl x:Class="TopazOrganizer.Controls.WeekGridControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+             MinWidth="530" MinHeight="146">
+
+    <UserControl.Resources>
+        
+        <!--A Style that affects all row definitions of the EventGrid-->
+        <Style x:Key="GridRowsStyle" TargetType="RowDefinition">
+            <Setter Property="MinHeight" Value="48"/>
+            <Setter Property="Height" Value="1*"/>
+        </Style>
+
+        <!--A Style that affects all  the row definition for long events of the EventGrid-->
+        <Style x:Key="LongEventGridRowsStyle" TargetType="RowDefinition">
+            <Setter Property="MinHeight" Value="17"/>
+            <Setter Property="Height" Value="*"/>
+        </Style>
+
+        <!--A Style that affects all column definitions of the EventGrid-->
+        <Style x:Key="GridColumnsStyle" TargetType="ColumnDefinition">
+            <Setter Property="MinWidth" Value="70"/>
+            <Setter Property="Width" Value="1*"/>
+        </Style>
+
+        <!--A Style that affects all vertical Lines building the individual cells of the grid-->
+        <Style x:Key="VerticalGridLinesStyle" TargetType="Line">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Stretch" Value="Fill"/>
+            <Setter Property="X1" Value="0"/>
+            <Setter Property="X2" Value="0"/>
+            <Setter Property="Y1" Value="0"/>
+            <Setter Property="Y2" Value="1"/>
+            <Setter Property="Grid.RowSpan" Value="24"/>
+            <Setter Property="Grid.Row" Value="0"/>
+            <Setter Property="Stroke" Value="DarkGray"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+        </Style>
+
+        <!--A Style that affects all horizontal Lines building the individual cells of the grid-->
+        <Style x:Key="HorizontalGridLinesStyle" TargetType="Line">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Stretch" Value="Fill"/>
+            <Setter Property="X1" Value="0"/>
+            <Setter Property="X2" Value="1"/>
+            <Setter Property="Y1" Value="0"/>
+            <Setter Property="Y2" Value="0"/>
+            <Setter Property="Grid.ColumnSpan" Value="8"/>
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="Stroke" Value="LightGray"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+
+        </Style>
+
+        <!--A Style that affects all horizontal dashed Lines at half hours in EventGrid-->
+        <Style x:Key="DashedHorizontalGridLinesStyle" TargetType="Line">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Stretch" Value="Fill"/>
+            <Setter Property="X1" Value="0"/>
+            <Setter Property="X2" Value="1"/>
+            <Setter Property="Y1" Value="0"/>
+            <Setter Property="Y2" Value="0"/>
+            <Setter Property="Grid.ColumnSpan" Value="8"/>
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="Stroke" Value="Gainsboro"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="StrokeDashArray" Value="3 6"/>
+
+        </Style>
+
+        <!--A Style that affects all TextBlocks showing the hour in the first column of EventGrid.-->
+        <Style x:Key="HourTextBlocksStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="FontFamily" Value="Arial Unicode MS"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Margin" Value="5,0,0,0"/>
+            <Setter Property="Foreground" Value="Gray"/>
+        </Style>
+
+        <!--A Style that affects all TextBlocks showing the days'names.-->
+        <Style x:Key="DaysTextBlocksStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="0,0,0,0"/>
+            <Setter Property="Foreground" Value="#FF494949"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <!--A Style that affects all TextBlocks showing the days dates.-->
+        <Style x:Key="DatesTextBlocksStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Grid.Row" Value="1"/>
+            <Setter Property="FontFamily" Value="Arial Unicode MS"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Margin" Value="3,1,0,5"/>
+            <Setter Property="Foreground" Value="#FF494949"/>
+            <Setter Property="Text" Value="00.00.0000"/>
+        </Style>
+
+        <!--A Style that affect all underlying rectangles in EventGrid's cells.-->
+        <Style x:Key="CellRectangleStyle" TargetType="Rectangle">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Fill" Value="Transparent"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+            <Setter Property="Stroke" Value="Transparent"/>
+            <Setter Property="Margin" Value="1,0,0,0"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Duration="0:0:0.05"
+                              Storyboard.TargetProperty="Stroke.Color"
+                              To="LightBlue" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Duration="0:0:0.3"
+                              Storyboard.TargetProperty="Stroke.Color"
+                              To="Transparent" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid  Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38" />
+            <RowDefinition Height="36"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--This StackPanel holds the buttons for moving through weeks and the TextBlocks for showing the week on focus.-->
+        <StackPanel 
+            HorizontalAlignment="Center"
+            Orientation="Horizontal"
+            MinWidth="240"
+            MinHeight="32"
+            Margin="0,0,0,2">
+
+            <Button x:Name="TodayButton" 
+                    Style="{StaticResource WeekGridButtonStyle}" 
+                    Content="Today"/>
+            <Button x:Name="PreviousWeekButton" 
+                    Style="{StaticResource WeekGridButtonStyle}"
+                    DockPanel.Dock="Left"
+                    VerticalAlignment="Stretch">
+                    <Path 
+                        HorizontalAlignment="Center" 
+                        Margin="0,0,3,0" 
+                        Fill="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                        Data="M 0 6 L 12 12 L 12 0 Z"/>
+            </Button>
+            <TextBlock x:Name="WeekStartTextBlock" 
+                       Style="{StaticResource DaysTextBlocksStyle}"
+                       Text="00.00.0000"
+                       MinWidth="72"/>
+            <TextBlock Style="{StaticResource DaysTextBlocksStyle}"
+                       Text=" - " 
+                       FontStretch="ExtraExpanded" 
+                       RenderTransformOrigin="0.5,0.5">
+                       <TextBlock.RenderTransform>
+                           <TransformGroup>
+                               <ScaleTransform ScaleX="2"/>
+                               <SkewTransform/>
+                               <RotateTransform/>
+                               <TranslateTransform/>
+                           </TransformGroup>
+                       </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock x:Name="WeekEndTextBlock" 
+                       Style="{StaticResource DaysTextBlocksStyle}"
+                       Text="00.00.0000"
+                       MinWidth="72"/>
+            <Button x:Name="NextWeekButton" 
+                    Style="{StaticResource WeekGridButtonStyle}"    
+                    VerticalAlignment="Stretch">
+                <Path HorizontalAlignment="Center" 
+                      Margin="3,0,0,0" 
+                      Fill="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                      Data="M 12 6 L 0 12 L 0 0 Z"/>
+            </Button>
+            <Button x:Name="AddButton" 
+                    Style="{StaticResource WeekGridButtonStyle}">
+                <Path HorizontalAlignment="Center" 
+                      Fill="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource AncestorType=ContentPresenter}}" 
+                      Data="M 6 0  6 6  0 6  0 9  6 9  6 15  9 15  9 9  15 9  15 6  9 6  9 0Z"/>
+            </Button>
+        </StackPanel>
+
+        <!--This Grid holds the TextBlocks for days names and their corresponding dates in the week on focus.-->
+        <Grid x:Name="DaysLabelsGrid" 
+              Grid.Row="1" 
+              HorizontalAlignment="Left" 
+              Width="{Binding ElementName=HoursGrid, Path=ActualWidth}">
+              <Grid.RowDefinitions>
+                  <RowDefinition/>
+                  <RowDefinition/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="36" Width="Auto" MaxWidth="48"/>
+                <!-- Columns 0-6 for the days of the week !-->
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+            </Grid.ColumnDefinitions>
+
+              <!--TextBlocks showing the days names-->
+              <TextBlock Grid.Column="1" Text="Monday" Style="{StaticResource DaysTextBlocksStyle}"/>
+              <TextBlock Grid.Column="2" Text="Tuesday" Style="{StaticResource DaysTextBlocksStyle}"/>
+              <TextBlock Grid.Column="3" Text="Wendsday" Style="{StaticResource DaysTextBlocksStyle}"/>
+              <TextBlock Grid.Column="4" Text="Thursday" Style="{StaticResource DaysTextBlocksStyle}"/>
+              <TextBlock Grid.Column="5" Text="Friday" Style="{StaticResource DaysTextBlocksStyle}"/>
+              <TextBlock Grid.Column="6" Text="Saturday" Style="{StaticResource DaysTextBlocksStyle}"/>
+              <TextBlock Grid.Column="7" Text="Sunday" Style="{StaticResource DaysTextBlocksStyle}"/>
+           
+              <!--TextBlocks showing the days current dates for the week on focus-->
+              <TextBlock x:Name="Day1TextBlock" Grid.Column="1" Style="{StaticResource DatesTextBlocksStyle}"/>
+              <TextBlock x:Name="Day2TextBlock" Grid.Column="2" Style="{StaticResource DatesTextBlocksStyle}"/>
+              <TextBlock x:Name="Day3TextBlock" Grid.Column="3" Style="{StaticResource DatesTextBlocksStyle}"/>
+              <TextBlock x:Name="Day4TextBlock" Grid.Column="4" Style="{StaticResource DatesTextBlocksStyle}"/>
+              <TextBlock x:Name="Day5TextBlock" Grid.Column="5" Style="{StaticResource DatesTextBlocksStyle}"/>
+              <TextBlock x:Name="Day6TextBlock" Grid.Column="6" Style="{StaticResource DatesTextBlocksStyle}"/>
+              <TextBlock x:Name="Day7TextBlock" Grid.Column="7" Style="{StaticResource DatesTextBlocksStyle}"/>
+        </Grid>
+
+        <!--Horizontal separator lines definitions.-->
+        <Line Grid.Row="0" Style="{StaticResource HorizontalSeparatorStyle}"/>
+        <Line Grid.Row="1" Style="{StaticResource HorizontalSeparatorStyle}"/>
+        <Line Grid.Row="2" Style="{StaticResource HorizontalGridLinesStyle}" VerticalAlignment="Bottom"/>
+        
+        <!--This grid holds the long events, cross-day events, etc-->
+        <Grid x:Name="DaysGrid" 
+              HorizontalAlignment="Left" 
+              VerticalAlignment="Stretch"
+              Grid.Row="2"
+              Width="{Binding ElementName=HoursGrid, Path=ActualWidth}"
+              Margin="0,0,0,3"
+              Background="{Binding ElementName=HoursGrid, Path=Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition MinHeight="18"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="36" Width="Auto" MaxWidth="48"/>
+                <!-- Columns 0-6 for the days of the week !-->
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+                <ColumnDefinition Style="{StaticResource GridColumnsStyle}"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Text block for showing the current time-->
+            <TextBlock x:Name="CurrentTimeTextBlock" Grid.Row=" 0" Text="00:00" Style="{StaticResource HourTextBlocksStyle}" FontWeight="Bold" Margin="5,0,0,0"/>
+            <!--Vertical gridline definitions-->
+            <Line Grid.Column="1" Style="{StaticResource VerticalGridLinesStyle}"/>
+            <Line Grid.Column="2" Style="{StaticResource VerticalGridLinesStyle}"/>
+            <Line Grid.Column="3" Style="{StaticResource VerticalGridLinesStyle}"/>
+            <Line Grid.Column="4" Style="{StaticResource VerticalGridLinesStyle}"/>
+            <Line Grid.Column="5" Style="{StaticResource VerticalGridLinesStyle}"/>
+            <Line Grid.Column="6" Style="{StaticResource VerticalGridLinesStyle}"/>
+            <Line Grid.Column="7" Style="{StaticResource VerticalGridLinesStyle}"/>
+            <!--Solid horizontal lines definition-->
+            <Line Grid.Row="0" Style="{StaticResource HorizontalGridLinesStyle}" VerticalAlignment="Bottom"/>
+            
+            <!--Current time pointers.-->
+            <Line x:Name="EventDayLine"
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Left"
+                  StrokeThickness="3"
+                  Stroke="Crimson"
+                  SnapsToDevicePixels="True"
+                  Stretch="Fill"
+                  Y2="1" 
+                  ClipToBounds="True" 
+                  Grid.Column="1"
+                  Margin="-1,0,0,0" 
+                  Panel.ZIndex="1"/>
+
+        </Grid>
+
+        <!--This ScrollViewer and its child Grid form the hour cellgrid.-->
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Visible">
+            <Grid x:Name="HoursGrid" 
+                  Background="White" 
+                  HorizontalAlignment="Stretch" 
+                  VerticalAlignment="Stretch" 
+                  MinHeight="864">
+                  <Grid.RowDefinitions>
+                      <!-- Rows 0-7 !-->
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <!-- Rows 8-15 !-->
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <!-- Rows 16-23 !-->
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                      <RowDefinition Style="{StaticResource GridRowsStyle}"/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    
+                      <!-- Column for displaying the timespans !-->
+                      <ColumnDefinition x:Name="EventGridHoursColumn" MinWidth="36" Width="Auto" MaxWidth="48"/>
+                      <!-- Columns 0-6 for the days of the week !-->
+                      <ColumnDefinition x:Name="EvetGridColumn0" Style="{StaticResource GridColumnsStyle}"/>
+                      <ColumnDefinition x:Name="EvetGridColumn1" Style="{StaticResource GridColumnsStyle}"/>
+                      <ColumnDefinition x:Name="EvetGridColumn2" Style="{StaticResource GridColumnsStyle}"/>
+                      <ColumnDefinition x:Name="EvetGridColumn3" Style="{StaticResource GridColumnsStyle}"/>
+                      <ColumnDefinition x:Name="EvetGridColumn4" Style="{StaticResource GridColumnsStyle}"/>
+                      <ColumnDefinition x:Name="EvetGridColumn5" Style="{StaticResource GridColumnsStyle}"/>
+                      <ColumnDefinition x:Name="EvetGridColumn6" Style="{StaticResource GridColumnsStyle}"/>
+
+                  </Grid.ColumnDefinitions>
+                
+                  <!--Textblocks showing the current hour cell time of day.-->
+                  <TextBlock Grid.Row=" 0" Text="00:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 1" Text="01:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 2" Text="02:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 3" Text="03:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 4" Text="04:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 5" Text="05:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 6" Text="06:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 7" Text="07:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 8" Text="08:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row=" 9" Text="09:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="10" Text="10:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="11" Text="11:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="12" Text="12:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="13" Text="13:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="14" Text="14:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="15" Text="15:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="16" Text="16:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="17" Text="17:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="18" Text="18:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="19" Text="19:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="20" Text="20:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="21" Text="21:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="22" Text="22:00" Style="{StaticResource HourTextBlocksStyle}"/>
+                  <TextBlock Grid.Row="23" Text="23:00" Style="{StaticResource HourTextBlocksStyle}"/>
+
+                  <!--Solid vertical lines definitions-->
+                  <Line Grid.Column="1" Style="{StaticResource VerticalGridLinesStyle}"/>
+                  <Line Grid.Column="2" Style="{StaticResource VerticalGridLinesStyle}"/>
+                  <Line Grid.Column="3" Style="{StaticResource VerticalGridLinesStyle}"/>
+                  <Line Grid.Column="4" Style="{StaticResource VerticalGridLinesStyle}"/>
+                  <Line Grid.Column="5" Style="{StaticResource VerticalGridLinesStyle}"/>
+                  <Line Grid.Column="6" Style="{StaticResource VerticalGridLinesStyle}"/>
+                  <Line Grid.Column="7" Style="{StaticResource VerticalGridLinesStyle}"/>
+                  <!--Solid horizontal lines definitions-->
+                  <Line Grid.Row="1" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="2" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="3" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="4" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="5" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="6" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="7" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="8" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="9" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="10" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="11" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="12" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="13" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="14" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="15" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="16" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="17" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="18" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="19" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="20" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="21" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="22" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <Line Grid.Row="23" Style="{StaticResource HorizontalGridLinesStyle}" />
+                  <!--Dashed horizontal lines definitions-->
+                  <Line Grid.Row="0" Style="{StaticResource DashedHorizontalGridLinesStyle}"/>
+                  <Line Grid.Row="1" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="2" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="3" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="4" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="5" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="6" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="7" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="8" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="9" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="10" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="11" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="12" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="13" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="14" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="15" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="16" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="17" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="18" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="19" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="20" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="21" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="22" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+                  <Line Grid.Row="23" Style="{StaticResource DashedHorizontalGridLinesStyle}" />
+
+                  <!--Current time pointers.-->
+                  <Line x:Name="CurrentTimeLine"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Stretch"
+                        StrokeThickness="3"
+                        Stroke="Crimson"
+                        SnapsToDevicePixels="True"
+                        ClipToBounds="True"
+                        Stretch="Fill"
+                        Margin="2 -1 2 0"
+                        X2="1"
+                        Grid.Column="1"
+                        Panel.ZIndex="1"/>
+                  <Path x:Name="CurrentTimeTriangle"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Fill="Crimson"
+                        SnapsToDevicePixels="True"
+                        Margin="0,-5,0,0"
+                        Data="M 0 0  7 5  0 10Z" 
+                        ClipToBounds="True"
+                        Panel.ZIndex="1"/>
+            </Grid>
+        </ScrollViewer>
+        
+        <!--Container for the different popup dialogs being attached to it.-->
+        <Popup Name="WeekGridPopup" 
+               PopupAnimation="Fade" 
+               AllowsTransparency="True" 
+               Placement="Top" 
+               SnapsToDevicePixels="True"/>
+    </Grid>
+
+</UserControl>

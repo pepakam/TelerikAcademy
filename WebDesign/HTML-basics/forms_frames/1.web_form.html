@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Penka Kamenova" />
+    <title>Web form</title>
+    <style type="text/css">
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+
+        table {
+            width: 500px;
+            border-collapse: collapse;
+        }
+
+        table, td {
+            border: 1px solid #808080;
+            margin: 0px;
+            padding: 6px;
+        }
+
+        tfoot {
+            text-align: center;
+            background-color: #d1ede1;
+        }
+
+        .left {
+            padding: 0px 5px 0px 3px;
+            text-align: right;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        .state {
+            border-left: solid;
+            border-right: solid;
+            border-width: 1px;
+            height: auto;
+        }
+
+        .auto-style1 {
+            width: 167px;
+        }
+    </style>
+</head>
+<body>
+    <form name="personal_info" method="get">
+        <table>
+            <colgroup>
+                <col style="width: 177px" />
+                <col />
+                <col />
+                <col />
+            </colgroup>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <input type="submit" value="Submit" />
+                        <input type="reset" value="Clear This Form" /></td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td class="left">
+                        <label for="LastName">Last Name</label></td>
+                    <td colspan="3">
+                        <input id="LastName" type="text" required placeholder="Your last name" style="width: 290px;" autofocus="autofocus" /></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="FirstName">First Name</label></td>
+                    <td colspan="3">
+                        <input id="FirstName" type="text" required placeholder="Your first name" style="width: 290px;" /></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Address">Address</label></td>
+                    <td colspan="3">
+                        <textarea id="Address" name="Address" rows="5" cols="37" required="required" style="width: 290px;"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="City">City</label></td>
+                    <td class="auto-style1">
+                        <input id="City" type="text" required="required" style="width: 198px;" /></td>
+
+                    <td>
+                        <label for="State">State</label></td>
+                    <td>
+                        <input id="State" type="text" required="required" style="width: 42px;" /></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Zip">Zip/Postal Code</label></td>
+                    <td colspan="3">
+                        <input id="Zip" type="text" required="required" style="width: 78px;" /></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Country">Country</label></td>
+                    <td colspan="3">
+                        <select name="Country" id="Country" style="width: 208px;">
+                            <option value="BG">Bulgaria</option>
+                            <option value="GB">Great Britain</option>
+                            <option value="RU">Rusia</option>
+                            <option value="UN">Hungary</option>
+                            <option value="BE">Belgium</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Code">Phone(country&nbsp;code, area&nbsp;code, number)</label></td>
+                    <td colspan="3">(+
+          <input id="Code" type="text" required placeholder="+359" style="width: 53px;" maxlength="3" />
+                        )
+          <input id="Code2" type="text" required placeholder="88" style="width: 53px;" maxlength="2" />
+                        -
+          <input id="Phone" type="tel" required placeholder="8334343" style="width: 132px;" /></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Email">E-mail</label></td>
+                    <td colspan="3">
+                        <input id="Email" type="email" required="required" pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" placeholder="sample@email.com" style="width: 290px;" /></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Month">Birth date</label></td>
+                    <td colspan="3">
+                        <label for="Month">Month</label>
+                        <input type="text" id="Month" style="width: 26px;" maxlength="2" />
+                        <label for="Date">Date</label>
+                        <input type="text" id="Date" style="width: 26px;" maxlength="2" />
+                        <label for="Year">Year (4 digits)</label>
+                        <input type="text" id="Year" style="width: 54px;" maxlength="4" /></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Gender">Gender</label></td>
+                    <td colspan="3">
+                        <select name="Gender" id="Gender">
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Spring">Starting date</label></td>
+                    <td colspan="3">
+                        <input name="StartingDate" type="radio" id="Spring" value="Spring" />
+                        <label for="Spring">Spring 2006</label>
+                        <input name="StartingDate" type="radio" id="Summer" value="Summer" />
+                        <label for="Summer">Summer 2006</label></td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Comments">Comments/Questions</label></td>
+                    <td colspan="3">
+                        <textarea name="Comments" id="Comments" style="width: 290px;" rows="5" cols="37" placeholder="Type your question here."></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

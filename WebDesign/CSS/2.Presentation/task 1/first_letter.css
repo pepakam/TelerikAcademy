@@ -1,0 +1,22 @@
+﻿@font-face {
+    font-family:Consolas;
+    src: url('consola.ttf')
+}
+@font-face {
+    font-family:Eduardian;
+    src: url('ITCEDSCR.TTF')
+}
+body
+{
+    font-family: Consolas, sans-serif;
+    color:#0094ff;
+    font-size:12px;
+}
+p:first-line {
+    line-height:2.5em;
+    font-weight:600;
+}
+p:first-letter {
+    font-family:Eduardian,serif;
+    font-size:35px;
+}

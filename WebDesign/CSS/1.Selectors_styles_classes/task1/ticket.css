@@ -1,0 +1,63 @@
+﻿body {
+    background-color: #595959;
+    font-family: Arial;
+    font-size: 18px;
+    color: #fff;
+}
+
+section header h1 {
+    font-size: 26px;
+    color: #bbb9b6;
+    font-weight: normal;
+    margin-bottom: -5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+    dd#name, a:link {
+        color: #f9e7a1;
+        font-size: 0.98em;
+    }
+
+    a:visited {
+        color: #f9e7a1;
+    }
+
+    a:hover {
+        color: #f88a72;
+    }
+
+dt {
+    float: left;
+    font-style: italic;
+    width: 160px;
+    padding-right: 5px;
+    margin: 7px 0;
+}
+
+dd {
+    margin: 7px 0;
+    padding: 7px 0;
+    color: #aeb1b4;
+}
+
+    dd.dot:before {
+        content: url('dot.png');
+        margin-right: 5px;
+    }
+
+    dt.support, dd.support {
+        margin: -17px 0px 0px 0px;
+        font-size: 20px;
+    }
+
+    dd.support {
+        color: #ff000e;
+    }
+
+    dd#status.not_answered {
+        font-size: 20px;
+        color: #e16a25;
+    }

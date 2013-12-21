@@ -1,0 +1,386 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #f5f5ec;
+    font-size: 10px;
+}
+
+body {
+    color: #333;
+    background: none;
+    font: 1.3rem "Sengoe UI", Arial, Verdana, sans-serif;
+}
+
+h1, h2 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+}
+#header {
+}
+
+#logo {
+    font-size: 3.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    float: left;
+}
+
+    #logo small {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin-left: 10px;
+    }
+
+#nav {
+    margin-top: 20px;
+    float: right;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+    #nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #nav li {
+        float: left;
+    }
+
+        #nav li.current {
+            font-weight: normal;
+        }
+
+    #nav a {
+        color: #676761;
+        padding: 5px;
+    }
+
+        #nav a:hover {
+            text-decoration: underline;
+        }
+
+#wrap {
+    margin: auto;
+    width: 960px;
+}
+
+.self-clear,
+#nav ul,
+#header,
+#slider,
+#welcome-text,
+#portfolio,
+#blog,
+#footer,
+.list {
+    zoom: 1;
+}
+
+    .self-clear:after,
+    #nav ul:after,
+    #header:after,
+    #slider:after,
+    #welcome-text:after,
+    #portfolio:after,
+    #blog:after,
+    #footer:after,
+    .list:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+
+#page-decoration {
+    background: #fff;
+    box-shadow: 0 0 3px #eaeadb;
+    margin: 10px 0;
+}
+
+#slider {
+    height: 360px;
+    overflow: hidden;
+    background: #83b2ad;
+    box-shadow: inset 0 0 70px #6b9e98;
+}
+
+    #slider .wrap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+        #slider.wrap img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #slider .wrap .a,
+        #slider .wrap .b {
+            margin-top: -15px;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+        }
+
+        #slider .wrap .a {
+            left: 10px;
+            background: red;
+        }
+
+        #slider .wrap .b {
+            right: 10px;
+            background: blue;
+        }
+
+#welcome-text {
+    padding: 50px;
+    text-align: center;
+}
+
+    #welcome-text .description {
+        font-size: 1.5rem;
+    }
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    .list .item {
+        float: left;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .list.col-2 .item {
+        width: 50%;
+    }
+
+    .list.col-3 .item {
+        width: 33.33333%;
+    }
+
+    .list.col-4 .item {
+        width: 25%;
+    }
+
+#portfolio {
+    padding: 20px;
+}
+
+    #portfolio h2 {
+        margin-top: 0;
+    }
+
+        #portfolio h2 small {
+            font-size: 1.4rem;
+            font-weight: normal;
+            margin-left: 10px;
+        }
+
+    #portfolio .more {
+        margin: -50px 0 0;
+        float: right;
+    }
+
+    #portfolio .list {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+        #portfolio .list .item {
+            height: 240px;
+        }
+
+            #portfolio .list .item img {
+                width: 100%;
+                height: 100%;
+            }
+
+                #portfolio .list .item img:hover {
+                    opacity: 0.5;
+                }
+
+#blog {
+    padding: 20px 20px 0 20px;
+}
+
+    #blog h2 {
+        margin-top: 0;
+    }
+
+        #blog h2 small {
+            font-size: 1.4rem;
+            font-weight: normal;
+            margin-left: 10px;
+        }
+
+    #blog .more {
+        margin: -50px 0 0;
+        float: right;
+    }
+
+    #blog .post-list {
+        margin-left: -20px;
+        margin-right: -20px;
+        border-top: solid 1px #ccc;
+        border-left: solid 1px #ccc;
+    }
+
+.post-list .post {
+    padding: 50px;
+    height: 240px;
+    position: relative;
+    border-bottom: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+}
+
+    .post-list .post .title {
+        font-size: 1.8rem;
+        margin: 0 0 10px 0;
+    }
+
+    .post-list .post .meta {
+        font-size: 1.2rem;
+        margin: 0 0 10px 0;
+        color: #aaa;
+        font-style: italic;
+    }
+
+    .post-list .post .description {
+        font-size: 1.3rem;
+        margin: 0;
+        height: 6.5rem;
+        overflow: hidden;
+    }
+
+@media only screen and (max-width: 990px) {
+    html {
+        font-size: 9px;
+    }
+
+    #slider {
+        height: 320px;
+    }
+
+    #wrap {
+        width: 760px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+
+    #slider {
+        height: 280px;
+    }
+        #slider .wrap .a,
+        #slider .wrap .b {
+            margin-top: -20px;
+            width: 40px;
+            height: 40px;
+        }
+
+    #wrap {
+        width: 100%;
+    }
+
+    #page-decoration {
+        box-shadow: none;
+    }
+
+    #header {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    #logo {
+        float: none;
+    }
+
+    #nav {
+        margin-top: 10px;
+        float: none;
+    }
+
+        #nav li {
+            float: none;
+            display: inline-block;
+        }
+}
+
+@media only screen and (max-width: 680px) {
+    #slider {
+        height: 240px;
+    }
+
+        #slider .wrap .a,
+        #slider .wrap .b {
+            margin-top: 0;
+            width: 50px;
+            height: 100%;
+            top: 0;
+        }
+
+        #slider .wrap .a {
+            left: 0;
+        }
+
+        #slider .wrap .b {
+            right: 0;
+        }
+
+    .list.col-3 .item,
+    .list.col-4 .item {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #slider {
+        display: none;
+    }
+
+    .list.col-2 .item,
+    .list.col-3 .item,
+    .list.col-4 .item {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    #nav li {
+        float: none;
+        display: block;
+    }
+
+    #nav a {
+        display: block;
+    }
+}

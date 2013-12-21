@@ -1,0 +1,76 @@
+﻿/*Author Penka Kamenova*/
+body {
+    font-family: Arial;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid #c7c6af;
+    margin: 0px;
+}
+
+td {
+    border-left: 2px solid #c7c6af;
+    border-right: 2px solid #c7c6af;
+    padding-left: 15px;
+    padding-right: 75px;
+    height: 48px;
+    font-size: 21px;
+}
+
+th {
+    border: 2px solid #2a7a05;
+    padding: 0px 20px 0px 15px;
+    background-color: #53b606;
+    background-image: url(img/bgr.png);
+    background-position: right;
+    background-repeat: repeat-y;
+    height: 38px;
+    color: #fff;
+    text-align: left;
+    vertical-align: central;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+tr:nth-of-type(2n) {
+    background-color: #ececd8;
+}
+
+input[type=checkbox] {
+    -webkit-appearance: none;
+    background-color: #d4d0c8;
+    border: 1px solid red;
+    border-top-color: #858586;
+    border-left-color: #858586;
+    border-bottom-color: #dbd8d1;
+    border-right-color: #dbd8d1;
+    box-shadow: 1px 1px 1px 1px #fcfcf7, inset 1px 1px 1px 1px #50504f;
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    position: relative;
+    padding: 0px;
+}
+
+input[type="checkbox"]:checked {
+    background: url('img/checkbox.png') 0px top no-repeat;
+}
+
+td.country {
+    background-position: 13px;
+    background-repeat: no-repeat;
+    padding-left: 64px;
+}
+
+    td.country.germany {
+        background-image: url(img/germany.png);
+    }
+
+    td.country.mexico {
+        background-image: url(img/mexico.png);
+    }
+
+    td.country.uk {
+        background-image: url(img/uk.png);
+    }

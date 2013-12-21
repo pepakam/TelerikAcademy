@@ -1,0 +1,1178 @@
+/**
+ * Styles
+ */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * @region Elements
+ */
+
+
+
+
+/** Root elements */
+html {
+	background: #ffffff;
+}
+body {
+	margin: 0 auto;
+	padding: 1.5em 0;
+	width: 640px;
+	color: #000000;
+	font-family: Calibri, "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, Lucida, sans-serif;
+	font-size: 14px;
+}
+
+
+
+
+/** Block Elements */
+div {}
+
+
+p {margin: 1.5em 0}
+pre {margin: 1.5em 0; font-family: monospace; white-space: pre}
+address {margin: 1.5em 0; font-style: italic}
+blockquote {margin: 1.5em 40px}
+
+
+
+
+/** Headings */
+h1, h2, h3, h4, h5, h6 {
+	font-family: Candara, "Myriad Pro", "Trebuchet MS", sans-serif;
+	font-weight: normal;
+}
+h1 {
+	margin: 1em 0;
+	font-size: 1.5em;
+	line-height: 1;
+}
+h2 {
+	margin: 1.2em 0;
+	font-size: 1.25em;
+	line-height: 1.2;
+}
+h3 {
+	margin: 1.5em 0;
+	font-size: 1em;
+	line-height: 1.5;
+	font-weight: bold;
+}
+h4, h5, h6 {
+	margin: 1.5em 0;
+	font-size: 1em;
+	line-height: 1.5;
+}
+
+
+
+
+/** Tables */
+table {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-spacing: 2px;
+	border-collapse: separate;
+}
+caption {
+	text-align: center;
+}
+thead, tbody ,tfoot {
+	vertical-align: top;
+}
+th, td {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	vertical-align: inherit;
+}
+th {
+	font-weight: bold;
+}
+td {}
+
+
+
+
+/** Lists */
+ol, ul {
+	margin: 1.5em 0;
+	padding: 0 0 0 40px;
+}
+ol ol, ol ul,
+ul ul, ul ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+dl {margin: 1.5em 0}
+dt {}
+dd {margin: 0 0 0 40px}
+
+
+
+
+/** Quotes */
+blockquote {quotes: ""; quotes: none}
+cite {font-style: italic}
+q {quotes: "\201c" "\201d" "\2018" "\2019"}
+
+
+
+
+/** Links */
+a {color: #0055aa; text-decoration: none}
+a:visited{color: #990099}
+a:hover {text-decoration: underline; color: #cc0000}
+a:focus {outline: 1px dotted}
+a:active {}
+
+
+
+
+
+/** Phrase elements */
+i, em {font-style: italic}
+b, strong {font-weight: bold}
+small {font-size: smaller}
+big {font-size: bigger}
+
+
+sub, sup {font-size: smaller; line-height: normal}
+sub {vertical-align: sub}
+sup {vertical-align: super}
+
+
+tt, code, kbd, samp {font-family: monospace}
+
+
+
+
+/** Images */
+img, a img {border: none; vertical-align: bottom}
+
+
+
+
+/** @endregion */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * @region	Form elements
+ */
+form {margin: 0; padding: 0}
+input, textarea, button, option, select {margin: 0; padding: 0}
+
+
+
+
+/** Fieldsets */
+fieldset {border: 1px solid #cccccc}
+fieldset > legend {}
+
+
+
+
+/** Textboxes */
+textarea,
+input[type=text],
+input[type=password] {
+	padding: 3px;
+	color: #000000;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	font: inherit;
+}
+
+
+
+/** Single / Multiple choice */
+input[type=radio],
+input[type=checkbox] {
+	margin: 0 3px 0 0;
+	vertical-align: middle;
+}
+
+
+
+
+/** Dropdowns */
+select {}
+option {}
+
+
+
+
+/** Buttons */
+button,
+input[type=button],
+input[type=submit] {}
+
+
+input[type=image] {vertical-align: middle}
+
+
+
+
+/** Buttons holder */
+.buttons {
+	margin: 1.5em 0 0 0;
+	text-align: center;
+}
+
+
+
+
+/** @endregion */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * @region Abstract
+ */
+
+
+
+
+/** Holder */
+.holder {
+	margin: 1.5em auto;
+	position: relative;
+}
+
+
+
+
+/** Meta */
+.meta {
+	font-size: .9em;
+	color: #999999;
+}
+
+
+
+
+/** @endregion */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * @region Micro patterns
+ */
+
+
+
+
+/** Selection */
+.selection {}
+.selection .selected {
+	font-weight: bold;
+}
+
+
+
+
+/** @endregion */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * @region Utility classes
+ */
+
+
+
+
+/** Flow */
+.float {float: left}
+.float-alt {float: right}
+.no-float {float: none}
+
+
+
+
+/** Hide / show */
+.skip, .hide,
+.hide-text span {display: none;}
+
+
+
+
+/** Visual clear */
+.clear {clear: both !important}
+.clear-left {clear: left !important}
+.clear-right {clear: right !important}
+.no-clear {clear: none !important}
+
+
+
+
+/** Self clear */
+.clear-self {
+	min-height: 0;
+	_zoom: 1;
+}
+.clear-self:after {
+	content: "";
+	height: 0;
+	clear: both;
+	display: block;
+}
+
+
+
+
+/** @endregion */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * @region UI Text
+ */
+
+
+
+
+/** Text alignment */
+.text-left {text-align: left}
+.text-right {text-align: right}
+.text-center {text-align: center}
+.text-justify {text-align: justify}
+
+
+
+
+/** Bold */
+.text-bold {font-weight: bold}
+.no-bold {font-weight: normal}
+
+
+
+
+/** Italic */
+.text-italic {font-style: italic}
+.no-italic {font-style: normal}
+
+
+
+
+/** Underline */
+.text-underline {text-decoration: underline}
+.no-underline {text-decoration: none}
+
+
+
+
+/** Text transfrom */
+.text-lowercase {text-transform: lowercase}
+.text-uppercase {text-transform: uppercase}
+.no-transform {text-transform: none}
+
+
+
+
+/** Text differences */
+.text-deleted {background: #ffdddd}
+.text-inserted {background: #ddffdd}
+.text-modified {background: #e4f2fd}
+
+
+
+
+/** Green text */
+.text-success,
+.text-positive {color: #339933}
+
+
+
+
+/** Blue text */
+.text-info,
+.text-normal {color: #5a96d0}
+
+
+
+
+/** Orange text */
+.text-warning {color: #ffa500}
+
+
+
+
+/** Red text */
+.text-error,
+.text-negative {color: #f44c4f}
+
+
+
+
+/** Gray text */
+.text-disabled {color: #999999}
+
+.article-example {background: #eeeeee; margin-left: 30px; padding:10px}
+
+
+
+
+/** @endregion */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * @region	UI boxes
+ */
+.ui-box {
+	margin: 1em 0;
+	padding: .75em .75em .75em 3em;
+	background-position: 1em center;
+	background-repeat: no-repeat;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	font-size: 0.9em;
+}
+
+
+
+	/** Box types */
+	ul.ui-box {}
+	p.ui-box {background-position: 1em .8em}
+
+
+
+	/** Box content */
+	.ui-box ul {
+		margin: 0;
+		padding: 0 0 0 40px;
+	}
+	.ui-box li {
+		padding: 0;
+		background: none;
+		list-style: disc;
+	}
+
+
+	.ui-box p {}
+
+
+
+
+	/** Green boxes */
+	.box-success {
+		background-color: #e4f1de;
+		border-color: #70bf54;
+	}
+
+
+		.box-success {background-image: url("../icons/silk/accept.png")}
+
+
+
+
+
+	/** Blue boxes */
+	.box-info {
+		background-color: #f0f0f0;
+		border-color: #b1c3d5;
+	}
+
+
+		.box-note {background-image: url("../icons/silk/information.png")}
+
+
+
+
+	/** Orange boxes */
+	.box-warning {
+		background-color: #fffac2;
+		border-color: #ffd400;
+	}
+
+
+		.box-warning {background-image: url("../icons/silk/error.png")}
+
+
+
+
+	/** Red boxes */
+	.box-error {
+		background-color: #fde8e5;
+		border-color: #f48587;
+        background-image: url("../icons/silk/exclamation.png");
+	}
+
+
+
+
+
+
+/** @endregion */
+
+
+
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+/**
+ * @region Fixes
+ */
+/** @endregion */
+/*style2*/
+.bc-archives {
+    font-size: .9em;
+}
+
+    .bc-archives ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 20px;
+    }
+
+        .bc-archives ul li {
+            float: left;
+        }
+
+            .bc-archives ul li a {
+                height: 19px;
+                line-height: 19px;
+                float: left;
+            }
+
+    .bc-archives .primary {
+        padding: 0 20px;
+    }
+
+        .bc-archives .primary li a {
+            margin: 0 10px 0 0;
+            padding: 0 10px;
+        }
+
+            .bc-archives .primary li a.current, .bc-archives .primary li a.selected {
+                border: 1px solid #cccccc;
+                border-bottom: 1px solid #ffffff;
+                font-weight: bold;
+            }
+
+    .bc-archives .secondary {
+        padding: 0 10px;
+        border: 1px solid #cccccc;
+    }
+
+        .bc-archives .secondary li a {
+            margin: 0 10px 0 0;
+        }
+
+            .bc-archives .secondary li a.current, .bc-archives .secondary li a.selected {
+                font-weight: bold;
+            }
+
+table.grid {
+    width: 100%;
+    border-collapse: separate !important;
+    empty-cells: show;
+    table-layout: auto;
+    clear: both;
+}
+
+    table.grid table {
+        width: 100%;
+    }
+
+.test {
+    color: green;
+}
+
+table.grid th, table.grid td {
+    padding: 0;
+    text-align: left;
+    vertical-align: top;
+}
+
+table.grid-a {
+    width: 100%;
+    border-collapse: collapse;
+    border: 0;
+    empty-cells: show;
+    table-layout: auto;
+    clear: both;
+}
+
+table.grid-b {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #cccccc;
+    empty-cells: show;
+    table-layout: auto;
+    clear: both;
+}
+
+    table.grid-b th {
+        padding: 5px;
+        background: #f0f0f0;
+        font-weight: bold;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    table.grid-b .row td, table.grid-b .even td {
+        padding: 5px;
+        border-bottom: 1px solid #cccccc;
+    }
+
+table.grid-c {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid #f0f0f0;
+    border-left: 1px solid #f0f0f0;
+    empty-cells: show;
+    table-layout: auto;
+    clear: both;
+}
+
+    table.grid-c th {
+        padding: 5px;
+        border-right: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    table.grid-c .row td, table.grid-c .even td {
+        padding: 5px;
+        border-right: 1px solid #f0f0f0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+table.grid-list-posts .entry {
+    margin-bottom: 0 0 10px 0;
+}
+
+table.grid-list-posts tr:last-child .entry {
+    margin-bottom: 0;
+}
+
+table.grid-list-comments .entry {
+    margin-bottom: 0 0 10px 0;
+}
+
+table.grid-list-comments tr:last-child .entry {
+    margin-bottom: 0;
+}
+
+table.grid-profile th {
+    width: 180px;
+    vertical-align: top;
+}
+
+table.grid-profile .row td, table.grid-profile .even td {
+    vertical-align: top;
+}
+
+table.grid-profile .edit-mode th {
+    padding-left: 25px;
+    background-position: 5px 4px;
+    background-repeat: no-repeat;
+}
+
+table.grid-profile .required-field th {
+    background-image: url("../../images/icons/silk/error.png");
+}
+
+table.grid-profile .invalid-field th {
+    background-image: url("../../images/icons/silk/exclamation.png");
+}
+
+table.grid-profile .text {
+    width: 98%;
+}
+
+table.grid-search .grid-header table th, table.grid-search-results .grid-header table th {
+    padding: 5px 0;
+}
+
+table.grid-search tbody td, table.grid-search-results tbody td {
+    padding: 5px 0;
+    color: #6f6d6d;
+}
+
+table.grid-search .snippet, table.grid-search-results .snippet {
+    color: #000000;
+}
+
+table.grid-search-users tbody td {
+    padding: 5px;
+    border-bottom: 1px solid;
+}
+
+table.grid-search-users p {
+    margin: 0;
+}
+
+table.grid-search-users .avatar {
+    margin: 0 5px 5px 0;
+    float: left;
+}
+
+table.grid-documents {
+    border: 0;
+}
+
+    table.grid-documents .owner {
+        width: 150px;
+    }
+
+    table.grid-documents .date {
+        width: 150px;
+    }
+
+    table.grid-documents .size {
+        width: 75px;
+    }
+
+    table.grid-documents .actions {
+        width: 16px;
+    }
+
+table.grid-wiki {
+    border: 1px solid #cccccc;
+    border-bottom: none;
+}
+
+    table.grid-wiki th, table.grid-wiki td {
+        padding: 2px;
+        border-bottom: 1px solid #cccccc;
+    }
+
+    table.grid-wiki .owner {
+        width: 150px;
+    }
+
+    table.grid-wiki .date {
+        width: 150px;
+    }
+
+    table.grid-wiki .size {
+        width: 75px;
+    }
+
+    table.grid-wiki .actions {
+        width: 16px;
+    }
+
+table.grid-messages .select {
+    width: 20px;
+}
+
+    table.grid-messages .select input {
+        vertical-align: middle;
+    }
+
+table.grid-messages .from {
+    width: 150px;
+}
+
+table.grid-messages .to {
+    width: 150px;
+}
+
+table.grid-messages .received-on {
+    width: 120px;
+}
+
+table.grid-messages .sent-on {
+    width: 120px;
+}
+
+table.grid-messages tr.new td {
+    font-weight: bold;
+}
+
+table.grid-messages {
+    border: 1px solid #cccccc;
+    border-bottom: none;
+}
+
+    table.grid-messages th, table.grid-messages td {
+        border-bottom: 1px solid #cccccc;
+    }
+
+table.grid-users .row td, table.grid-users .even td {
+    padding: 5px;
+    border-bottom: 1px solid #cccccc;
+}
+
+table.grid-users .avatar {
+    margin: 0 5px 5px 0;
+    float: left;
+}
+
+table.grid-login th {
+    padding: 5px 5px 5px 50px;
+    width: 130px;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-align: left;
+}
+
+table.grid-login .row td, table.grid-login .even td {
+    padding: 5px;
+}
+
+table.grid-forgot th {
+    padding: 5px;
+    width: 250px;
+}
+
+table.grid-forgot .row td, table.grid-forgot .even td {
+    padding: 5px;
+}
+
+.command-item {
+    padding: 0;
+    background: #f0f0f0;
+    border-bottom: 1px solid #cccccc;
+}
+
+    .command-item td {
+        padding: 0;
+    }
+
+    .command-item table, table.command-item {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .command-item table td, table.command-item td {
+            padding: 5px;
+            border: 0;
+        }
+
+tr.pager table {
+    width: 100%;
+}
+
+.pager-b {
+    background: #f0f0f0;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+
+    .pager-b table {
+        width: 100%;
+        border-collapse: collapse;
+        empty-cells: hide;
+    }
+
+        .pager-b table td {
+            padding: 2px;
+            border: 0;
+        }
+
+        .pager-b table .pages-count {
+            text-align: center;
+        }
+
+        .pager-b table .results-count {
+            width: 25%;
+            text-align: right;
+        }
+
+.pager-c {
+    background: #f0f0f0;
+    font-size: .9em;
+}
+
+    .pager-c table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+        empty-cells: show;
+    }
+
+        .pager-c table td {
+            padding: 5px;
+            border: none;
+            vertical-align: middle;
+        }
+
+    .pager-c .view-filter {
+        text-align: right;
+    }
+
+        .pager-c .view-filter .filter-range {
+            float: left;
+        }
+
+            .pager-c .view-filter .filter-range .selected {
+                font-weight: bold;
+            }
+
+        .pager-c .view-filter .text {
+            font-size: inherit;
+        }
+
+    .pager-c .view-type {
+        width: 25%;
+        text-align: right;
+    }
+
+        .pager-c .view-type .label {
+            float: left;
+            line-height: 2em;
+        }
+
+        .pager-c .view-type .image-button {
+            vertical-align: middle;
+        }
+
+    .pager-c .pages-count {
+        text-align: center;
+    }
+
+.tabs, .tabstrip {
+    margin: 0;
+    padding: 0 20px;
+    width: auto;
+    min-height: 0;
+    _zoom: 1;
+}
+
+    .tabs:after, .tabstrip:after {
+        content: "";
+        height: 0;
+        clear: both;
+        display: block;
+    }
+
+    .tabs div, .tabstrip div {
+        width: auto;
+        min-height: 0;
+        _zoom: 1;
+    }
+
+        .tabs div:after, .tabstrip div:after {
+            content: "";
+            height: 0;
+            clear: both;
+            display: block;
+        }
+
+    .tabs ul, .tabstrip ul {
+        margin: 0;
+        padding: 0;
+        width: auto;
+        list-style: none;
+        min-height: 0;
+        _zoom: 1;
+    }
+
+        .tabs ul:after, .tabsstrip ul:after {
+            content: "";
+            height: 0;
+            clear: both;
+            display: block;
+        }
+
+        .tabs ul li, .tabstrip ul li {
+            margin: 0 10px -1px 0;
+            float: left;
+            position: relative;
+        }
+
+            .tabs ul li a, .tabstrip ul li a {
+                padding: 5px;
+                color: #888888;
+                background: #f0f0f0;
+                border: 1px solid #dddddd-color;
+                display: block;
+            }
+
+                .tabs ul li a:hover, .tabstrip ul li a:hover {
+                    color: #444444;
+                    background: #f0f0f0;
+                    text-decoration: none;
+                }
+
+                .tabs ul li a.selected, .tabstrip ul li a.selected {
+                    font-weight: bold;
+                }
+
+.tab-content, .tabstrip-content {
+    padding: 10px;
+    border: 1px solid #dddddd-color;
+}
+
+table.form {
+    width: 100%;
+}
+
+    table.form tbody th {
+        padding: 2px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    table.form tbody td {
+        padding: 2px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    table.form .text {
+        width: 95%;
+    }
+
+.form-a th {
+    padding: 5px;
+    font-weight: bold;
+}
+
+.form-a td {
+    padding: 5px;
+}
+
+.form-a .text {
+    padding: 2px;
+    width: 75%;
+}
+
+table.form-data {
+    width: 100%;
+}
+
+    table.form-data caption {
+        padding: 10px;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+    table.form-data tbody th {
+        padding: 10px 5px;
+        width: 33%;
+        background: transparent;
+        text-align: right;
+        font-weight: normal;
+        vertical-align: top;
+    }
+
+    table.form-data tbody td {
+        padding: 7px 5px;
+        vertical-align: top;
+    }
+
+    table.form-data .text {
+        width: 75%;
+    }
+
+div.form-data {
+    padding: 10px 0;
+    clear: both;
+}
+
+    div.form-data .label {
+        margin: 0 10px 0 0;
+        padding: 0 5px;
+        width: 33%;
+        text-align: right;
+        float: left;
+    }
+
+    div.form-data .text {
+        width: 60%;
+    }
+
+fieldset.form-data-a {
+    margin: 1em 0 0 0;
+    padding: .5em 1em;
+    border: 1px solid #cccccc;
+}
+
+    fieldset.form-data-a legend {
+        padding: 0 1em;
+        font-weight: bold;
+    }
+
+fieldset.search-form {
+    padding: 10px;
+    border: 1px solid #eeeeee;
+}
+
+    fieldset.search-form table td {
+        padding: 0 5px;
+        vertical-align: middle;
+    }
+
+    fieldset.search-form .text {
+        width: 150px;
+    }
+
+table.RadEWrapper, table.RadEWrapper table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+    table.RadEWrapper td {
+        padding: 0 !important;
+        vertical-align: middle !important;
+    }
+
+#some-tmp-fix-id .some-tmp-fix-class {
+    content: "some tmp fix styles";
+}
+
+.RadGrid_Default {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.RadETableWrapper, .RadETableWrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}

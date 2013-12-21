@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.StringReverse", "2.StringReverse\2.StringReverse.csproj", "{7CDF3E7E-3CE8-4342-846E-53DB5365EF89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Brackets", "3.Brackets\3.Brackets.csproj", "{05F87F13-20BA-4F96-8FEF-1BBD0DC6E590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.HowManyTimes", "4.HowManyTimes\4.HowManyTimes.csproj", "{CB39261F-706A-42F1-9ABF-449B1DA0B93E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CDF3E7E-3CE8-4342-846E-53DB5365EF89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDF3E7E-3CE8-4342-846E-53DB5365EF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDF3E7E-3CE8-4342-846E-53DB5365EF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDF3E7E-3CE8-4342-846E-53DB5365EF89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F87F13-20BA-4F96-8FEF-1BBD0DC6E590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F87F13-20BA-4F96-8FEF-1BBD0DC6E590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F87F13-20BA-4F96-8FEF-1BBD0DC6E590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F87F13-20BA-4F96-8FEF-1BBD0DC6E590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB39261F-706A-42F1-9ABF-449B1DA0B93E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB39261F-706A-42F1-9ABF-449B1DA0B93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB39261F-706A-42F1-9ABF-449B1DA0B93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB39261F-706A-42F1-9ABF-449B1DA0B93E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

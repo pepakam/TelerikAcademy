@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Penka Kamenova" />
+    <title>Shop items</title>
+    <style type="text/css">
+        body {
+            font-family: Arial,Verdana;
+            font-size: 12px;
+            color: #3b3b3b;
+        }
+
+        table {
+            width: 95%;
+            border-collapse: collapse;
+        }
+
+            table.center {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        table, th {
+            border: 1px solid #a4abb2;
+            text-align: left;
+            margin: 0px;
+        }
+
+        th {
+            font-weight: normal;
+            padding: 2px 8px 0px 8px;
+        }
+
+        td {
+            padding: 6px 8px 0px 8px;
+        }
+
+        tbody td {
+            border: 1px solid #d0d7e5;
+            height: 26px;
+        }
+
+        tfoot {
+            border: 1px solid #a4abb2;
+            height: 60px;
+            background-color: #c1c5ca;
+            background-image: url(img/bgr2.png);
+            background-repeat: repeat-x;
+        }
+
+        #count {
+            text-align: right;
+        }
+
+        input[type=image] {
+            margin-left: 3px;
+            margin-right: 3px;
+            vertical-align: middle;
+        }
+
+        input[type=text], [type=checkbox] {
+            vertical-align: middle;
+        }
+
+        select {
+            width: 45px;
+            height: 22px;
+            color: #3b3b3b;
+        }
+
+        a:link {
+            text-decoration: none;
+            display: inline-block;
+            width: 16px;
+            height: 22px;
+            color: #3b3b3b;
+            text-align: center;
+            padding-top: 2px;
+        }
+
+        a:hover {
+            background-image: url(img/hover.png);
+            background-repeat: no-repeat;
+        }
+
+        .current {
+            background-image: url(img/active.png);
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <form name="items" method="get">
+        <table class="center">
+            <colgroup>
+                <col style="width: 70px;" />
+                <col style="width: auto;" />
+                <col style="width: 15%;" />
+                <col style="width: 20%;" />
+                <col style="width: 15%;" />
+                <col style="width: 10%;" />
+            </colgroup>
+            <thead>
+                <tr style="background: #e7e9eb; height: 23px;">
+                    <th colspan="6">Drag a column header and drop it here to group by that column</th>
+                </tr>
+                <tr style="background: url(img/bgr1.png) #dfe3e8; height: 25px;">
+                    <th>
+                        <label for="ProductID">ProductID</label></th>
+                    <th>
+                        <label for="ProductName">Product name</label></th>
+                    <th>
+                        <label for="UnitPrice">Unit price</label></th>
+                    <th>
+                        <label for="QuantityPerUnit">Quantity per unit</label></th>
+                    <th>
+                        <label for="UnitsInStock">Units in stock</label></th>
+                    <th>
+                        <label for="Discontinued">Discontinued</label></th>
+                </tr>
+                <tr style="background: #dfe3e8; height: 35px;">
+                    <th>
+                        <input type="text" id="ProductID" style="width: 28px;" /></th>
+                    <th>
+                        <input type="text" id="ProductName" style="width: 145px;" /></th>
+                    <th style="min-width: 120px;">
+                        <input type="text" id="UnitPrice" style="width: 78px;" /><input type="image" src="img/filter.png" alt="filter" /></th>
+                    <th>
+                        <input type="text" id="QuantityPerUnit" style="width: 93px;" /></th>
+                    <th style="min-width: 120px;">
+                        <input type="text" id="UnitsInStock" style="width: 78px;" /><input type="image" src="img/filter.png" alt="filter" /></th>
+                    <th style="min-width: 60px;">
+                        <input type="checkbox" name="Discontinued" id="Discontinued" /><input type="image" src="img/filter.png" alt="filter" /></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr style="height: 30px;">
+                    <td colspan="2" style="min-width: 250px;">
+                        <input type="image" src="img/begin.png" alt="begin" /><input type="image" src="img/prev.png" alt="prev" /><a class="current" href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> ... <a href="#">10</a>
+                        <input type="image" src="img/next.png" alt="next" /><input type="image" src="img/end.png" alt="end" /></td>
+                    <td>Page size
+                            <select>
+                                <option value="10"
+                                    selected="selected">10</option>
+                                <option value="15">15</option>
+                                <option value="20">20</option>
+                            </select>
+                    </td>
+                    <td colspan="3" id="count">335104 items in 33511 pages</td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Chai</td>
+                    <td>$18.00</td>
+                    <td>10 boxes x 20 bags</td>
+                    <td>39</td>
+                    <td>
+                        <input type="checkbox" name="select" /></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Chang</td>
+                    <td>$19.00</td>
+                    <td>24 -12 oz bottles</td>
+                    <td>17</td>
+                    <td>
+                        <input type="checkbox" name="select" /></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Aniseed Syrup</td>
+                    <td>$10.00</td>
+                    <td>12 - 550 ml bottles</td>
+                    <td>13</td>
+                    <td>
+                        <input type="checkbox" name="select" /></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Chef Anton's Cajun Seasoning</td>
+                    <td>$22.00</td>
+                    <td>48 - 6 oz jars</td>
+                    <td>53</td>
+                    <td>
+                        <input type="checkbox" name="select" /></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Chef Anton's Gumbo Mix</td>
+                    <td>$21.35</td>
+                    <td>36 boxes</td>
+                    <td>0</td>
+                    <td>
+                        <input type="checkbox" name="select" checked="checked" /></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Grandma's Boysenberry Spread</td>
+                    <td>$25.00</td>
+                    <td>12 - 8 oz jars</td>
+                    <td>120</td>
+                    <td>
+                        <input type="checkbox" name="select" /></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Uncle Bob's Organic Dried Pears</td>
+                    <td>$30.00</td>
+                    <td>12 -1 lb pkgs.</td>
+                    <td>15</td>
+                    <td>
+                        <input type="checkbox" name="select" /></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Northwoods Cranberry Sauce</td>
+                    <td>$40.00</td>
+                    <td>12 -12 oz jars</td>
+                    <td>6</td>
+                    <td>
+                        <input type="checkbox" name="select" /></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Mishi Kobe Niku</td>
+                    <td>$97.00</td>
+                    <td>18 - 500 g pkgs.</td>
+                    <td>29</td>
+                    <td>
+                        <input type="checkbox" name="select" checked="checked" /></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Ikura</td>
+                    <td>$31.00</td>
+                    <td>12 - 200 ml jars</td>
+                    <td>31</td>
+                    <td>
+                        <input type="checkbox" name="select" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

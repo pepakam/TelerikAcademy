@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Webshims_library_Input elements</title>
+    <link href="spectrum-for-color/spectrum.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="datetime-polyfill/datetime-polyfill.css" />
+    <link rel="stylesheet" href="week-polyfill-master/week-polyfill.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery.ui.all.css" />
+    <style type="text/css">
+        body {
+            font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 200px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            display: block;
+            padding: 15px;
+            border-bottom: 1px solid #e2dfdf;
+            border-left: 1px solid #e2dfdf;
+            border-right: 1px solid #e2dfdf;
+            width: 550px;
+        }
+
+            li:first-of-type {
+                border-top: 1px solid #e2dfdf;
+            }
+
+            li:last-of-type {
+                text-align: center;
+            }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="spectrum-for-color/spectrum.js" type="text/javascript"></script>
+    <script src="js-webshim/minified/extras/modernizr-custom.js"></script>
+    <script src="js-webshim/minified/polyfiller.js"></script>
+    <script src="js-webshim/minified/shims/form-shim-extend.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="datetime-polyfill/datetime-polyfill.js"></script>
+    <script type="text/javascript" src="week-polyfill-master/week-polyfill.min.js"></script>
+    <script>
+
+        $.webshims.setOptions('forms', {
+            customDatalist: true
+        });
+        $.webshims.setOptions('forms-ext', {
+            replaceUI: true
+        });
+
+        //load all polyfill features
+        //or load only a specific feature with $.webshims.polyfill('feature-name');
+        $.webshims.polyfill();
+    </script>
+    <script>
+        $(function () {
+            $('form').bind('firstinvalid', function (e) {
+                //show the invalid alert for first invalid element
+                $.webshims.validityAlert.showFor(e.target);
+                //prevent browser from showing his native validation message
+                return false;
+            });
+
+            $('#range').each(function () {
+                var range = $(this);
+                var number = $('<input class="number" min="0" max="100" type="number" />');
+                var updateNumber = function () {
+                    number.prop('value', $(this).prop('value'));
+                };
+                var updateRange = function () {
+                    range.prop('value', number.prop('value'));
+                };
+
+                range.beforePolyfill(number);
+
+                number.bind('input', updateRange);
+                range
+					.bind('input', updateNumber)
+					.each(updateNumber)
+                ;
+            });
+            $('#email').bind('datalistselect', function () {
+                if (window.console) {
+                    console.log('selected form datalist: ' + $.prop(this, 'value'));
+                }
+            });
+        });
+    </script>
+   
+    <script>
+        if (!jQuery.browser) {
+            jQuery.browser = {};
+        }
+    </script>
+   
+
+
+</head>
+<body>
+    <h1>Input elements -  range, number, email, date, color, datetime, month, search, tel, time, url, week</h1>
+
+    <form>
+            <ul>
+                <li>
+                    <label for="points">Range:</label><input type="range" name="points" id="points" min="1" max="10" /></li>
+                <li>
+                    <label for="quantity">Number:</label>
+                    <input type="number" name="quantity" id="quantity" min="1" max="5"></li>
+                <li>
+                    <label for="e-mail">Email:</label>
+                    <input type="email" name="email" id="e-mail"></li>
+                <li>
+                    <label for="bday">Date:</label>
+                    <input type="date" name="bday" id="bday"></li>
+                <li>
+                    <label for="favcolor">Color:</label>
+                    <input type="color" name="favcolor" id="favcolor"></li>
+                <li>
+                    <label for="bdaytime">Datetime:</label>
+                    <input type="datetime" name="bdaytime" id="bdaytime"></li>
+                <li>
+                    <label for="bdaymonth">Month:</label>
+                    <input type="month" name="bdaymonth" id="bdaymonth"></li>
+                <li>
+                    <label for="googlesearch">Search:</label>
+                    <input type="search" name="googlesearch" id="googlesearch"></li>
+                <li>
+                    <label for="usrtel">Tel:</label>
+                    <input type="tel" name="usrtel" id="usrtel"></li>
+                <li>
+                    <label for="usr_time">Time:</label>
+                    <input type="time" name="usr_time" id="usr_time"></li>
+                <li>
+                    <label for="homepage">Url:</label>
+                    <input type="url" name="homepage" id="homepage"></li>
+                <li>
+                    <label for="week_year">Week:</label>
+                    <input type="week" name="week_year" id="week_year"></li>
+                <li>
+
+                    <input type="submit" value="SEND"></li>
+            </ul>
+    </form>
+
+
+</body>
+</html>

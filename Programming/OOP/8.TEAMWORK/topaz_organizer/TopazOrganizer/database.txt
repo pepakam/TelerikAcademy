@@ -1,0 +1,20 @@
+﻿Title: Maths
+Location: 10204
+Start time: 28.11.2013 г. 01:00:00 ч.
+End time: 28.11.2013 г. 02:00:00 ч.
+EventType: Lecture
+Title: German
+Location: 10402
+Start time: 30.11.2013 г. 01:00:00 ч.
+End time: 30.11.2013 г. 02:00:00 ч.
+EventType: Exercise
+Title: Stipendii
+Location: 
+Start time: 9.12.2013 г. 09:00:00 ч.
+End time: 9.12.2013 г. 10:00:00 ч.
+EventType: Other
+Title: Stavane
+Location: 
+Start time: 10.12.2013 07:00:00 ч.
+End time: 10.12.2013 08:00:00 ч.
+EventType: Meeting

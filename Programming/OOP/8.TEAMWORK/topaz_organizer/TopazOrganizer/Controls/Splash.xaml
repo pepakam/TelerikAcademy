@@ -1,0 +1,65 @@
+﻿<Window x:Class="TopazOrganizer.Controls.Splash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Splash" 
+        Height="500" 
+        Width="500"
+        BorderBrush="transparent"
+        WindowStyle="none" 
+        Icon="/Images/topaz_icon.png" 
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!--A Style that affects close button of Splash screen.-->
+        <Style x:Key="CloseButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="0"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border">
+                                    <Setter.Value>
+                                        <ImageBrush x:Name="bg" ImageSource="/Images/close_btn_hover.png" Stretch="Uniform"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="/Images/topaz.png"/>
+    </Window.Background>
+    <Grid MouseLeftButtonDown="Move">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Button Style="{StaticResource CloseButton}"
+                Name="BtnClose"  HorizontalAlignment="Left"
+                BorderBrush="transparent"
+                
+                Margin="398,0,0,0" 
+                VerticalAlignment="Top" 
+                Width="25" Height="25" Click="BtnClose_Click" RenderTransformOrigin="-0.077,0.28">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/close_btn.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <TextBox Name="Un"  HorizontalAlignment="Left" Height="30" Margin="164,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="169"/>
+        <PasswordBox Name="Pw" HorizontalAlignment="Left" Height="30" Margin="164,309,0,0" VerticalAlignment="Top" Width="169" Password="" />
+        <Button Content="Log In" HorizontalAlignment="Left" Height="28" Margin="207,381,0,0" VerticalAlignment="Top" Width="86" Click="Button_Click_1"/>
+        <Label Content="User name" HorizontalAlignment="Left" Height="30" Margin="90,258,0,0" VerticalAlignment="Top" Width="69" Background="#FF5CA0B3" Foreground="#FFF8FCFC"/>
+        <Label Content="Password" HorizontalAlignment="Left" Height="30" Margin="90,309,0,0" VerticalAlignment="Top" Width="69" Background="#FF5CA0B3" Foreground="#FFECF5E9"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="140,471,0,-1" TextWrapping="Wrap" Text="created by team Topaz©, 2013" VerticalAlignment="Top" Width="220" Foreground="#FF363636" FontSize="16"/>
+    </Grid>
+</Window>
+    

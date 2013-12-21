@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TopazOrganizer.App" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Controls.DateTimeSpan" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAIAAAAAAAAIEAAAAAAIgAABAAAQAAgAAAAAEAAAAA=</HashCode>
+      <FileName>Controls\DateTimeSpan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Controls.EventControl" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACABoAUBiQEAsBEAAaMAAUCIAAlAAASgQEiACBAAkQ=</HashCode>
+      <FileName>Controls\EventControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Controls.MainWindow" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEEAAAAAAAA=</HashCode>
+      <FileName>Controls\MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Controls.NewEventWindow" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAEAAAAAgAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Controls\NewEventWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Controls.WindowEventArgs" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAYAAAAEIAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\WindowEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Dispatchers.EventControlDispatcher" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQCABgEAACMAAACwgFAQAkBEAAAAyCAAAAAAAAQI=</HashCode>
+      <FileName>Dispatchers\EventControlDispatcher.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TopazOrganizer.Dispatchers.EventViewModelDispatcher" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICDKIJUDEDAGBIAQCATEUBwgoAEQAAgBABMMAABBgQE=</HashCode>
+      <FileName>Dispatchers\EventViewModelDispatcher.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TopazOrganizer.Dispatchers.PopupDispatcher" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAgQIQAACAAAEAAACBBAAAAAAACAIABAIAEAAAEAQA=</HashCode>
+      <FileName>Dispatchers\PopupDispatcher.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.DataChangedEventArgs">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerEvents\DataChangedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.DeadlineEvent" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerEvents\DeadlineEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.ExerciseEvent" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerEvents\ExerciseEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.LectureEvent" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerEvents\LectureEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.MeetingEvent" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerEvents\MeetingEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.OrganizerEvent" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAICQCACAEAkIBYAAAAWgAAAAQABAAEAAAAAAAA=</HashCode>
+      <FileName>OrganizerEvents\OrganizerEvent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.OrganizerEventData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCIAAAAEAAIACAAAAAgABAoAQAAAAAABAIAIAAAQCAg=</HashCode>
+      <FileName>OrganizerEvents\OrganizerEventData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.OrganizerEventFactory" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>OrganizerEvents\OrganizerEventFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerEvents.OtherEvent" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerEvents\OtherEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerExceptions.AttachedControlException" Collapsed="true">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerExceptions\AttachedControlException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerExceptions.DataSourceException" Collapsed="true">
+    <Position X="5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerExceptions\DataSourceException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerExceptions.DuplicateDataSourceException" Collapsed="true">
+    <Position X="5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerExceptions\DuplicateDataSourceException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerExceptions.NullAttachedControlException" Collapsed="true">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerExceptions\NullAttachedControlException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerExceptions.NullDataSourceException" Collapsed="true">
+    <Position X="7.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerExceptions\NullDataSourceException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerExceptions.NullDispatcherException" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerExceptions\NullDispatcherException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.OrganizerExceptions.OrganizerException" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizerExceptions\OrganizerException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.PopupDialogs.EditEventDialog" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PopupDialogs\EditEventDialog.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.PopupDialogs.PopupDialogFinishedEventArgs" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PopupDialogs\PopupDialogFinishedEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Properties.Resources" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Properties.Settings" Collapsed="true">
+    <Position X="19" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TopazOrganizer.Controls.WeekGridControl" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAAEAIAAAAAEEAACAAAABIAAAAEAAABBAAQAAEAA=</HashCode>
+      <FileName>Controls\WeekGridControl.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TopazOrganizer.Dispatchers.IEventControlDispatcher" Collapsed="true">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAEBEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dispatchers\IEventControlDispatcher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TopazOrganizer.Dispatchers.IPopupDispatcher" Collapsed="true">
+    <Position X="17.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Dispatchers\IPopupDispatcher.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TopazOrganizer.OrganizerEvents.IEventDataContainer" Collapsed="true">
+    <Position X="13.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAIAAAAEAAAACAAAAAAABAgAAAAAAAABAIAIAAAAAAg=</HashCode>
+      <FileName>OrganizerEvents\IEventDataContainer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TopazOrganizer.OrganizerEvents.INotifyEventDataChanged" Collapsed="true">
+    <Position X="15.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAABAAAIAAAAAAA=</HashCode>
+      <FileName>OrganizerEvents\INotifyEventDataChanged.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="TopazOrganizer.PopupDialogType" Collapsed="true">
+    <Position X="13.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAEACAAAAAAAAAAA=</HashCode>
+      <FileName>PopupDialogs\PopupDialogType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TopazOrganizer.OrganizerEvents.OrganizerEventType" Collapsed="true">
+    <Position X="12" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAQIAAAA=</HashCode>
+      <FileName>OrganizerEvents\OrganizerEventType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

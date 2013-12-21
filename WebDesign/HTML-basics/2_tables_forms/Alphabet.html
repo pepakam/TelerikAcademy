@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Penka Kamenova" />
+    <title>Alphabet</title>
+    <style type="text/css">
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            margin: 0px;
+            padding: 2px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        col {
+            width: 45px;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="3">Title goes here</th>
+                <td>A</td>
+                <td class="right">B</td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>N</td>
+                <td colspan="4">O</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td rowspan="3" class="left">C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+                <td class="right">G</td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td colspan="2">I</td>
+                <td rowspan="2" class="right">J</td>
+            </tr>
+            <tr>
+                <td>K</td>
+                <td>L</td>
+                <td>M</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
